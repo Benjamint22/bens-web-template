@@ -1,0 +1,21 @@
+{
+    "plugins": ["jest"],
+    "extends": ["airbnb-typescript/base", "prettier/@typescript-eslint", "plugin:prettier/recommended"],
+    "parserOptions": {
+        "project": ["./tsconfig.json", "./tsconfig.test.json", "./tsconfig.config.json"]
+    },
+    "env": {
+        "browser": true,
+        "jest/globals": true
+    },
+    "rules": {
+        "max-classes-per-file": ["off", 3],
+        "no-nested-ternary": "off",
+        "no-plusplus": "off",
+        "class-methods-use-this": "off",
+        "no-await-in-loop": "off",
+        "import/prefer-default-export": "off",
+        "import/no-default-export": "error",
+        "@typescript-eslint/no-use-before-define": "off"
+    }
+}

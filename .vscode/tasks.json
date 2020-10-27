@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "serve",
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"detail": "Serve on http://localhost:9000"
+		},
+		{
+			"label": "build",
+			"type": "npm",
+			"script": "build",
+			"problemMatcher": [],
+			"detail": "Build for production"
+		},
+		{
+			"label": "test",
+			"type": "npm",
+			"script": "test",
+			"problemMatcher": [],
+			"detail": "Run unit tests and get coverage"
+		},
+		{
+			"label": "clean",
+			"type": "npm",
+			"script": "clean",
+			"problemMatcher": [],
+			"detail": "Cleans build artifacts"
+		}
+	]
+}
