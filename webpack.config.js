@@ -1,13 +1,13 @@
-const path = require('path');
+const { resolve } = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const staticExtensions = ['html', 'png', 'svg', 'jpg', 'gif'];
 
 /**
- * @type {import('webpack').ConfigurationFactory}
+ * @returns {import('webpack').Configuration}
  */
-module.exports = (env, { mode }) => ({
+module.exports = (_, { mode }) => ({
     entry: { index: './src/scripts/index.ts' },
     devtool: mode === 'development' ? 'source-map' : false,
     module: {
@@ -15,7 +15,7 @@ module.exports = (env, { mode }) => ({
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
-                include: [path.resolve(__dirname, 'src/scripts')],
+                include: [resolve(__dirname, 'src/scripts')],
                 exclude: /\.test\.tsx?$/,
             },
             {
@@ -25,7 +25,7 @@ module.exports = (env, { mode }) => ({
                     'css-loader',
                     'sass-loader',
                 ],
-                include: [path.resolve(__dirname, 'src/style')],
+                include: [resolve(__dirname, 'src/style')],
             },
             {
                 test: new RegExp(`\\.(${staticExtensions.join('|')})$`),
@@ -46,10 +46,9 @@ module.exports = (env, { mode }) => ({
     },
     output: {
         filename: 'scripts/[name].js',
-        path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: resolve(__dirname, 'dist'),
         compress: true,
         port: 9000,
     },

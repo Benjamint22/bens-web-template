@@ -16,23 +16,28 @@ A simple front-end web development template I made for my own use. Feel free to 
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Setup
-Run `npm install`
+* Run `npm install`
 
 ## Starting / serving
-Run `npm start`
+
+### From VSCode (enables debugging)
+* Run `npm start` in the console OR run the "serve" task
+* Run the "Launch Chrome against localhost" launch task
+
+### From the command line
+* Run `npm start`
+* Open `http://localhost:9000` in your web browser.
 
 ## Building (for production)
-Run `npm run build`
+* Run `npm run build`
 
 ## Testing
-Run `npm run test`
+
+### From VSCode (enables debugging)
+* Run the "Debug tests" launch task
+
+### From the command line
+* Run `npm run test`
 
 ## Cleaning
-Run `npm run clean`
-
-## Debugging
-1. Make sure you're using [Visual Studio Code](https://code.visualstudio.com).
-2. Make sure the project is started (instructions above)
-2. Press `CTRL + Shift + D` or `CMD + Shift + D`
-3. At the top left corner of the screen, select "Launch Chrome against localhost"
-4. Press F5
+* Run `npm run clean`
